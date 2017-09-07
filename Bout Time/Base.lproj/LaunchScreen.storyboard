@@ -21,12 +21,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="splash_screen.png" translatesAutoresizingMaskIntoConstraints="NO" id="Igy-qU-zgJ">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="splash_screen" translatesAutoresizingMaskIntoConstraints="NO" id="Igy-qU-zgJ">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="Igy-qU-zgJ" secondAttribute="bottom" id="2OC-OQ-p2t"/>
+                            <constraint firstItem="Igy-qU-zgJ" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="8b9-8P-qGa"/>
+                            <constraint firstAttribute="trailing" secondItem="Igy-qU-zgJ" secondAttribute="trailing" id="ugd-3U-omd"/>
+                            <constraint firstItem="Igy-qU-zgJ" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="yUA-Vs-DWf"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -35,6 +40,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="splash_screen.png" width="1333" height="2366"/>
+        <image name="splash_screen" width="1333" height="2366"/>
     </resources>
 </document>

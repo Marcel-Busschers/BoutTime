@@ -12,9 +12,9 @@
 		C2E8E8DB1F57346D0091D8AF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C2E8E8D91F57346D0091D8AF /* Main.storyboard */; };
 		C2E8E8DD1F57346D0091D8AF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C2E8E8DC1F57346D0091D8AF /* Assets.xcassets */; };
 		C2E8E8E01F57346D0091D8AF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C2E8E8DE1F57346D0091D8AF /* LaunchScreen.storyboard */; };
-		C2E8E9121F580C9B0091D8AF /* BoutTimeAssets in Resources */ = {isa = PBXBuildFile; fileRef = C2E8E9111F580C9B0091D8AF /* BoutTimeAssets */; };
-		C2E8E9161F580CBA0091D8AF /* AudioClips in Resources */ = {isa = PBXBuildFile; fileRef = C2E8E9151F580CBA0091D8AF /* AudioClips */; };
 		C2E8E9181F5812B60091D8AF /* HistoricalEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2E8E9171F5812B60091D8AF /* HistoricalEvents.swift */; };
+		C2E8E91A1F59804E0091D8AF /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2E8E9191F59804E0091D8AF /* WebViewController.swift */; };
+		C2E8E91C1F5980A60091D8AF /* GameOverController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2E8E91B1F5980A60091D8AF /* GameOverController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,9 +25,9 @@
 		C2E8E8DC1F57346D0091D8AF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C2E8E8DF1F57346D0091D8AF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C2E8E8E11F57346D0091D8AF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C2E8E9111F580C9B0091D8AF /* BoutTimeAssets */ = {isa = PBXFileReference; lastKnownFileType = folder; path = BoutTimeAssets; sourceTree = "<group>"; };
-		C2E8E9151F580CBA0091D8AF /* AudioClips */ = {isa = PBXFileReference; lastKnownFileType = folder; path = AudioClips; sourceTree = "<group>"; };
 		C2E8E9171F5812B60091D8AF /* HistoricalEvents.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoricalEvents.swift; sourceTree = "<group>"; };
+		C2E8E9191F59804E0091D8AF /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
+		C2E8E91B1F5980A60091D8AF /* GameOverController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameOverController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,14 +61,14 @@
 			isa = PBXGroup;
 			children = (
 				C2E8E8D51F57346D0091D8AF /* AppDelegate.swift */,
+				C2E8E9171F5812B60091D8AF /* HistoricalEvents.swift */,
 				C2E8E8D71F57346D0091D8AF /* ViewController.swift */,
+				C2E8E91B1F5980A60091D8AF /* GameOverController.swift */,
+				C2E8E9191F59804E0091D8AF /* WebViewController.swift */,
 				C2E8E8D91F57346D0091D8AF /* Main.storyboard */,
-				C2E8E9151F580CBA0091D8AF /* AudioClips */,
-				C2E8E9111F580C9B0091D8AF /* BoutTimeAssets */,
 				C2E8E8DC1F57346D0091D8AF /* Assets.xcassets */,
 				C2E8E8DE1F57346D0091D8AF /* LaunchScreen.storyboard */,
 				C2E8E8E11F57346D0091D8AF /* Info.plist */,
-				C2E8E9171F5812B60091D8AF /* HistoricalEvents.swift */,
 			);
 			path = "Bout Time";
 			sourceTree = "<group>";
@@ -134,9 +134,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C2E8E8E01F57346D0091D8AF /* LaunchScreen.storyboard in Resources */,
-				C2E8E9161F580CBA0091D8AF /* AudioClips in Resources */,
 				C2E8E8DD1F57346D0091D8AF /* Assets.xcassets in Resources */,
-				C2E8E9121F580C9B0091D8AF /* BoutTimeAssets in Resources */,
 				C2E8E8DB1F57346D0091D8AF /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -151,6 +149,8 @@
 				C2E8E9181F5812B60091D8AF /* HistoricalEvents.swift in Sources */,
 				C2E8E8D81F57346D0091D8AF /* ViewController.swift in Sources */,
 				C2E8E8D61F57346D0091D8AF /* AppDelegate.swift in Sources */,
+				C2E8E91C1F5980A60091D8AF /* GameOverController.swift in Sources */,
+				C2E8E91A1F59804E0091D8AF /* WebViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -318,6 +318,7 @@
 				C2E8E8E61F57346D0091D8AF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
