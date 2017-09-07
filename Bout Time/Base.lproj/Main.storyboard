@@ -94,53 +94,80 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WQk-XG-8FF">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WQk-XG-8FF">
                                 <rect key="frame" x="309" y="285" width="45" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="45" id="Hxp-gZ-NWv"/>
                                     <constraint firstAttribute="height" constant="60" id="qQ1-Os-dsp"/>
                                 </constraints>
                                 <state key="normal" image="up_half"/>
+                                <connections>
+                                    <action selector="upHalfButton2:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Lmi-aV-8f2"/>
+                                    <action selector="upHalfTouchDown:" destination="BYZ-38-t0r" eventType="touchDown" id="GMy-aq-iWO"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4fX-qo-R2x">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4fX-qo-R2x">
                                 <rect key="frame" x="309" y="345" width="45" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="45" id="7MY-hq-RYI"/>
                                     <constraint firstAttribute="height" constant="60" id="ijy-FV-2SJ"/>
                                 </constraints>
                                 <state key="normal" image="down_half"/>
+                                <connections>
+                                    <action selector="downHalfButton2:" destination="BYZ-38-t0r" eventType="touchUpInside" id="KP8-gY-J32"/>
+                                    <action selector="downHalfTouchDown:" destination="BYZ-38-t0r" eventType="touchDown" id="p9P-t7-Bn7"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kon-KK-ZpL">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kon-KK-ZpL">
                                 <rect key="frame" x="309" y="25" width="45" height="120"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" button="YES" image="YES"/>
+                                </accessibility>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="45" id="fxE-9y-VLm"/>
                                     <constraint firstAttribute="height" constant="120" id="iBQ-WF-zTz"/>
                                 </constraints>
                                 <state key="normal" image="down_full"/>
+                                <connections>
+                                    <action selector="downFullButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MsF-Vb-cKm"/>
+                                    <action selector="downFullTouchDown:" destination="BYZ-38-t0r" eventType="touchDown" id="yPv-EU-cPt"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cej-z6-s92">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cej-z6-s92">
                                 <rect key="frame" x="309" y="215" width="45" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="5Sw-a2-YAv"/>
                                     <constraint firstAttribute="width" constant="45" id="sqQ-tq-hNa"/>
                                 </constraints>
                                 <state key="normal" image="down_half"/>
+                                <connections>
+                                    <action selector="downHalfButton1:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lEc-wC-I1a"/>
+                                    <action selector="downHalfTouchDown:" destination="BYZ-38-t0r" eventType="touchDown" id="aTG-Dr-c7t"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Zf-Yl-1bs">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Zf-Yl-1bs">
                                 <rect key="frame" x="309" y="155" width="45" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="45" id="YAC-Zr-vHY"/>
                                     <constraint firstAttribute="height" constant="60" id="nWC-ze-Z9W"/>
                                 </constraints>
                                 <state key="normal" image="up_half"/>
+                                <connections>
+                                    <action selector="upHalfButton1:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gpi-Y1-Fzv"/>
+                                    <action selector="upHalfTouchDown:" destination="BYZ-38-t0r" eventType="touchDown" id="SQn-D1-IWy"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3ts-hd-hAf">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3ts-hd-hAf">
                                 <rect key="frame" x="309" y="415" width="45" height="120"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="45" id="KC9-Rl-CWv"/>
                                     <constraint firstAttribute="height" constant="120" id="zvP-23-vS9"/>
                                 </constraints>
-                                <state key="normal" image="down_full"/>
+                                <state key="normal" image="up_full"/>
+                                <connections>
+                                    <action selector="upFullButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="JyY-7z-0A8"/>
+                                    <action selector="upFullTouchDown:" destination="BYZ-38-t0r" eventType="touchDown" id="nBp-PZ-ymy"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Timer" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Rz-72-Q8w">
                                 <rect key="frame" x="116" y="555" width="143" height="50"/>
@@ -204,12 +231,15 @@
                             <constraint firstAttribute="trailingMargin" secondItem="w9i-Wq-THn" secondAttribute="trailing" constant="5" id="xEo-QP-9qY"/>
                             <constraint firstItem="B2L-XC-kmX" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="5" id="y2R-sW-b3A"/>
                         </constraints>
-                        <variation key="default">
-                            <mask key="subviews">
-                                <exclude reference="XlH-K1-yJI"/>
-                            </mask>
-                        </variation>
                     </view>
+                    <connections>
+                        <outlet property="eventLabel1" destination="mFY-nL-ZGS" id="CVQ-Dg-4pC"/>
+                        <outlet property="eventLabel2" destination="CTE-fV-Pg9" id="cQH-N6-yAE"/>
+                        <outlet property="eventLabel3" destination="w9i-Wq-THn" id="sfs-tW-TYG"/>
+                        <outlet property="eventLabel4" destination="B2L-XC-kmX" id="UOm-Ki-NiL"/>
+                        <outlet property="informationLabel" destination="0FS-CT-oY1" id="LV5-PM-VnM"/>
+                        <outlet property="timerLabel" destination="7Rz-72-Q8w" id="K7S-lP-zeU"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -317,6 +347,7 @@
         <image name="down_half" width="158" height="229"/>
         <image name="next_round_success" width="558" height="142"/>
         <image name="play_again" width="450" height="142"/>
+        <image name="up_full" width="158" height="457"/>
         <image name="up_half" width="158" height="229"/>
         <image name="webview_bar" width="1333" height="167"/>
     </resources>
