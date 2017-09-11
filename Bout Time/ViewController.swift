@@ -19,15 +19,22 @@ class ViewController: UIViewController {
     let questionsToAsk: Int = 6
     var correctQuestions: Int = 0
     
-    // MARK: Outlets
+    var event1: event?
+    var event2: event?
+    var event3: event?
+    var event4: event?
     
-    @IBOutlet weak var eventLabel1: UILabel!
-    @IBOutlet weak var eventLabel2: UILabel!
-    @IBOutlet weak var eventLabel3: UILabel!
-    @IBOutlet weak var eventLabel4: UILabel!
+    // MARK: Outlets
+
     @IBOutlet weak var timerLabel: UILabel!
     @IBOutlet weak var informationLabel: UILabel!
     @IBOutlet weak var nextRoundButton: UIButton!
+    
+    @IBOutlet weak var eventButton1: UIButton!
+    @IBOutlet weak var eventButton2: UIButton!
+    @IBOutlet weak var eventButton3: UIButton!
+    @IBOutlet weak var eventButton4: UIButton!
+    
     
     // MARK: Action Buttons
     
@@ -81,7 +88,22 @@ class ViewController: UIViewController {
     
     // Buttons to see more information about event
     
+    let wvc = WebViewController()
+    @IBAction func checkWikiEvent1() {
+        wvc.eventClicked = event1
+    }
     
+    @IBAction func checkWikiEvent2() {
+        wvc.eventClicked = event2
+    }
+    
+    @IBAction func checkWikiEvent3() {
+        wvc.eventClicked = event3
+    }
+    
+    @IBAction func checkWikiEvent4() {
+        wvc.eventClicked = event4
+    }
     
     // MARK: Button Press & Change
     
@@ -130,7 +152,7 @@ class ViewController: UIViewController {
     
     func runTimer() {
         timerSeconds = 60
-        timer = Timer.init(timeInterval: 1, target: self, selector: #selector(updateTimer), userInfo: nil, repeats: true)
+        timer = Timer.init(timeInterval: 1, target: self, selector: #selector(ViewController.updateTimer), userInfo: nil, repeats: true)
     }
     
     func updateTimer() {
@@ -138,9 +160,7 @@ class ViewController: UIViewController {
         timerLabel.text = "0:\(timerSeconds)"
         
         if timerSeconds == 0 {
-            timer.invalidate()
-            
-            // TODO: Evalidate answers method
+            endRound()
         }
     }
     
@@ -150,7 +170,7 @@ class ViewController: UIViewController {
         informationLabel.text = "Shake to Complete"
         runTimer()
         displayQuestion()
-        
+        setEventButtonsEnabled(false)
         
     }
         
@@ -168,10 +188,15 @@ class ViewController: UIViewController {
         }
         
         // set each label to each question
-        eventLabel1.text = fourEventsPerQuestion[0].description
-        eventLabel2.text = fourEventsPerQuestion[1].description
-        eventLabel3.text = fourEventsPerQuestion[2].description
-        eventLabel4.text = fourEventsPerQuestion[3].description
+        eventButton1.setTitle(fourEventsPerQuestion[0].description, for: .normal)
+        eventButton2.setTitle(fourEventsPerQuestion[1].description, for: .normal)
+        eventButton3.setTitle(fourEventsPerQuestion[2].description, for: .normal)
+        eventButton4.setTitle(fourEventsPerQuestion[3].description, for: .normal)
+        
+        event1 = fourEventsPerQuestion[0]
+        event2 = fourEventsPerQuestion[1]
+        event3 = fourEventsPerQuestion[2]
+        event4 = fourEventsPerQuestion[3]
     }
     
     func randomInt(until: Int) -> Int {
@@ -183,9 +208,25 @@ class ViewController: UIViewController {
         timer.invalidate()
         informationLabel.text = "Click an event to learn more"
         nextRoundButton.isHidden = false
+        setEventButtonsEnabled(true)
     }
     
+    func setEventButtonsEnabled(_ value: Bool) {
+        eventButton1.isEnabled = value
+        eventButton2.isEnabled = value
+        eventButton3.isEnabled = value
+        eventButton4.isEnabled = value
+    }
     
+    // MARK: SHAKE GESTURE
+    
+    override func becomeFirstResponder() -> Bool {
+        return true
+    }
+    
+    override func motionEnded(_ motion: UIEventSubtype, with event: UIEvent?) {
+        endRound()
+    }
     
     
     
