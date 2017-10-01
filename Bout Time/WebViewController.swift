@@ -17,25 +17,14 @@ class WebViewController: UIViewController {
     
     // Variables
     @IBOutlet weak var webView: UIWebView!
-    var eventClicked: event?
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        if let url = eventClicked?.webViewURL {
-            loadRequestIntoWebView(url: url)
-        }
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-    }
-    
-    // Used to load a URL into the web View
-    func loadRequestIntoWebView(url: URL) {
-        let request = URLRequest(url: url)
-        webView.loadRequest(request)
     }
     
 
