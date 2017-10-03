@@ -9,10 +9,15 @@
 import UIKit
 
 class GameOverController: UIViewController {
+    
+    let questionsToAsk: Int = 6
+    var correctQuestions: Int = 0
+    
+    @IBOutlet weak var scoreLabel: UILabel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        scoreLabel.text = "\(correctQuestions)/\(questionsToAsk)"
         // Do any additional setup after loading the view.
     }
 
@@ -21,7 +26,11 @@ class GameOverController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func playAgainButton(_ sender: UIButton) {
+        performSegue(withIdentifier: "unwindSegue", sender: nil)
+    }
 
+    
     /*
     // MARK: - Navigation
 

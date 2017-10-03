@@ -15,6 +15,8 @@ class ViewController: UIViewController {
     
     var timerSeconds = 60
     var timer = Timer()
+    var isTimerRunning = false
+    
     var answeredEvents: [Int] = []
     let questionsToAsk: Int = 6
     var correctQuestions: Int = 0
@@ -23,6 +25,8 @@ class ViewController: UIViewController {
     var event2URL: URL? = nil
     var event3URL: URL? = nil
     var event4URL: URL? = nil
+    
+    var request: URLRequest? = nil
     
     // MARK: Outlets
 
@@ -148,32 +152,53 @@ class ViewController: UIViewController {
     }
     
     // MARK: Timer
-    // FIXME: TIMER NOT WORKING
+
     func runTimer() {
-        timerSeconds = 60
-        timer = Timer.init(timeInterval: 1, target: self, selector: #selector(ViewController.updateTimer), userInfo: nil, repeats: true)
+        if isTimerRunning == false {
+            timerLabel.text = "0:60"
+            timerSeconds = 60
+            timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(ViewController.updateTimer), userInfo: nil, repeats: true)
+            isTimerRunning = true
+        }
     }
     
     func updateTimer() {
         timerSeconds -= 1
-        timerLabel.text = "0:\(timerSeconds)"
+        if timerSeconds >= 10 {
+            timerLabel.text = "0:\(timerSeconds)"
+        } else {
+            timerLabel.text = "0:0\(timerSeconds)"
+        }
+        
         
         if timerSeconds == 0 {
             endRound()
         }
+        
+        
+    }
+    
+    func endTimer() {
+        timer.invalidate()
+        timerSeconds = 60
+        isTimerRunning = false
     }
     
     // MARK: GAME CODE
     
+    func resetGame() {
+        answeredEvents.removeAll()
+        correctQuestions = 0
+        startGame()
+    }
+    
     func startGame() {
-        
-        // TODO: Check if game finished, change segue
-        
-        informationLabel.text = "Shake to Complete"
-        runTimer()
-        displayQuestion()
-        setEventButtonsEnabled(false)
-        
+        if !checkGameEnd() {
+            informationLabel.text = "Shake to Complete"
+            runTimer()
+            displayQuestion()
+            setEventButtonsEnabled(false)
+        }
     }
     
     var fourEventsPerQuestion: [event] = []
@@ -196,11 +221,15 @@ class ViewController: UIViewController {
         eventButton3.setTitle(fourEventsPerQuestion[2].description, for: .normal)
         eventButton4.setTitle(fourEventsPerQuestion[3].description, for: .normal)
         
+        setEventURL()
+        
+    }
+    
+    func setEventURL() {
         event1URL = fourEventsPerQuestion[0].webViewURL
         event2URL = fourEventsPerQuestion[1].webViewURL
         event3URL = fourEventsPerQuestion[2].webViewURL
         event4URL = fourEventsPerQuestion[3].webViewURL
-        
     }
     
     func randomInt(until: Int) -> Int {
@@ -234,7 +263,7 @@ class ViewController: UIViewController {
                 nextRoundButton.setImage(image, for: .normal)
             }
         }
-        timer.invalidate()
+        endTimer()
         informationLabel.text = "Click an event to learn more"
         nextRoundButton.isHidden = false
         setEventButtonsEnabled(true)
@@ -261,14 +290,10 @@ class ViewController: UIViewController {
     
     func loadRequestIntoWebView(url: URL?) {
         
-        // FIXME: WEBREQUEST NOT WORKING
-        
-        let wvc = WebViewController()
-        
         if let givenURL = url {
-            let request = URLRequest(url: givenURL)
-            wvc.webView.loadRequest(request)
+            request = URLRequest(url: givenURL)
         }
+        performSegue(withIdentifier: "webViewSegue", sender: nil)
     }
     
     // MARK: Helper Code
@@ -288,8 +313,38 @@ class ViewController: UIViewController {
         
         fourEventsPerQuestion[startIndex] = endEvent
         fourEventsPerQuestion[endIndex] = rootEvent
+        setEventURL()
     }
     
+    func checkGameEnd() -> Bool{
+        if answeredEvents.count == questionsToAsk*4  {
+            performSegue(withIdentifier: "gameEndSegue", sender: nil)
+            endTimer()
+            return true
+        }
+        return false
+    }
+    
+    // Mark: Segue
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "gameEndSegue" {
+            if let destination = segue.destination as? GameOverController {
+                destination.correctQuestions = self.correctQuestions
+            }
+        }
+        if segue.identifier == "webViewSegue" {
+            if let destination = segue.destination as? WebViewController {
+                destination.request = self.request
+            }
+        }
+    }
+    
+    @IBAction func unwindToMain(segue: UIStoryboardSegue) {
+        if segue.identifier == "unwindSegue" {
+            resetGame()
+        }
+    }
     
     
     

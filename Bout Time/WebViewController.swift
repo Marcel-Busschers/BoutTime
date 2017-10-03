@@ -16,9 +16,14 @@ class WebViewController: UIViewController {
     }
     
     // Variables
+    var request: URLRequest? = nil
     @IBOutlet weak var webView: UIWebView!
     
     override func viewDidLoad() {
+        if let urlRequest = request {
+            webView.loadRequest(urlRequest)
+        }
+        
         super.viewDidLoad()
     }
 
@@ -28,4 +33,5 @@ class WebViewController: UIViewController {
     }
     
 
+    
 }
