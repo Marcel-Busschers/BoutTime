@@ -8,6 +8,7 @@
 
 import UIKit
 import GameKit
+import AVFoundation
 
 class ViewController: UIViewController {
     
@@ -252,13 +253,13 @@ class ViewController: UIViewController {
     func endRound() {
         let correct = evaluateAnswers()
         if correct {
-            // TODO: Play Correct Sound
+            playSound(.correct)
             if let image: UIImage = UIImage(named: "next_round_success") {
                 nextRoundButton.setImage(image, for: .normal)
             }
             correctQuestions += 1
         } else {
-            // TODO: Play Incorrect sound
+            playSound(.incorrect)
             if let image: UIImage = UIImage(named: "next_round_fail") {
                 nextRoundButton.setImage(image, for: .normal)
             }
@@ -346,6 +347,38 @@ class ViewController: UIViewController {
         }
     }
     
+    // Mark: Sound
+    
+    var audioPlayer = AVAudioPlayer()
+    
+    enum typeOfSound: String {
+        case correct = "CorrectDing"
+        case incorrect = "IncorrectBuzz"
+    }
+    
+    func playSound(_ sound: typeOfSound) {
+        if sound == .correct {
+            
+            if let soundBundle = Bundle.main.path(forResource: sound.rawValue, ofType: "wav") {
+                do {
+                    audioPlayer = try AVAudioPlayer(contentsOf: URL.init(fileURLWithPath: soundBundle))
+                    audioPlayer.prepareToPlay()
+                    audioPlayer.play()
+                } catch {}
+            }
+            
+        } else {
+            
+            if let soundBundle = Bundle.main.path(forResource: sound.rawValue, ofType: "wav") {
+                do {
+                    audioPlayer = try AVAudioPlayer(contentsOf: URL.init(fileURLWithPath: soundBundle))
+                    audioPlayer.prepareToPlay()
+                    audioPlayer.play()
+                } catch {}
+            }
+            
+        }
+    }
     
     
     

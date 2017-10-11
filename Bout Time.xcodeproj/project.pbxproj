@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C2C68E471F8E31E3004676AB /* CorrectDing.wav in Resources */ = {isa = PBXBuildFile; fileRef = C2C68E451F8E31E3004676AB /* CorrectDing.wav */; };
+		C2C68E481F8E31E3004676AB /* IncorrectBuzz.wav in Resources */ = {isa = PBXBuildFile; fileRef = C2C68E461F8E31E3004676AB /* IncorrectBuzz.wav */; };
 		C2E8E8D61F57346D0091D8AF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2E8E8D51F57346D0091D8AF /* AppDelegate.swift */; };
 		C2E8E8D81F57346D0091D8AF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2E8E8D71F57346D0091D8AF /* ViewController.swift */; };
 		C2E8E8DB1F57346D0091D8AF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C2E8E8D91F57346D0091D8AF /* Main.storyboard */; };
@@ -18,6 +20,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C2C68E451F8E31E3004676AB /* CorrectDing.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = CorrectDing.wav; sourceTree = "<group>"; };
+		C2C68E461F8E31E3004676AB /* IncorrectBuzz.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = IncorrectBuzz.wav; sourceTree = "<group>"; };
 		C2E8E8D21F57346D0091D8AF /* Bout Time.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Bout Time.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2E8E8D51F57346D0091D8AF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C2E8E8D71F57346D0091D8AF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -41,6 +45,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C2C68E441F8E31C3004676AB /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				C2C68E451F8E31E3004676AB /* CorrectDing.wav */,
+				C2C68E461F8E31E3004676AB /* IncorrectBuzz.wav */,
+			);
+			name = Sounds;
+			sourceTree = "<group>";
+		};
 		C2E8E8C91F57346D0091D8AF = {
 			isa = PBXGroup;
 			children = (
@@ -60,6 +73,7 @@
 		C2E8E8D41F57346D0091D8AF /* Bout Time */ = {
 			isa = PBXGroup;
 			children = (
+				C2C68E441F8E31C3004676AB /* Sounds */,
 				C2E8E8D51F57346D0091D8AF /* AppDelegate.swift */,
 				C2E8E9171F5812B60091D8AF /* HistoricalEvents.swift */,
 				C2E8E8D71F57346D0091D8AF /* ViewController.swift */,
@@ -134,8 +148,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				C2E8E8E01F57346D0091D8AF /* LaunchScreen.storyboard in Resources */,
+				C2C68E481F8E31E3004676AB /* IncorrectBuzz.wav in Resources */,
 				C2E8E8DD1F57346D0091D8AF /* Assets.xcassets in Resources */,
 				C2E8E8DB1F57346D0091D8AF /* Main.storyboard in Resources */,
+				C2C68E471F8E31E3004676AB /* CorrectDing.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
